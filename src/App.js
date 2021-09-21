@@ -5,6 +5,7 @@ import MoviesList from "./components/MoviesList";
 import ListHeading from './components/ListHeading';
 import { SearchBox } from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
+import RemoveFavourites from './components/RemoveFavourites';
 
 const App = () => {
   //Set state
@@ -23,20 +24,38 @@ const App = () => {
     }
   };
 
+  // FUNCTIONS
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  useEffect(() => {
+    const movieFavourites =JSON.parse(localStorage.getItem('react-movie-app-favourites'));
+    setFavourites(movieFavourites);
+  }, []);
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+  }
+
   const addFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie];
     setFavourites(newFavouriteList);
+    saveToLocalStorage(newFavouriteList);
   }
+
+  const removeFavouriteMovie = (movie) => {
+    const newFavouriteList = favourites.filter((favourite) => favourite.imdbID !== movie.imdbID);
+    setFavourites(newFavouriteList);
+    saveToLocalStorage(newFavouriteList);
+  }
+  // FUNCTIONS CLOSE
 
   return (
     <div className="container-fluid">
       <div className="row d-flex align-items-center mt-4 mb-4">
         <ListHeading heading="Movies" />
-        
+
         <SearchBox 
           searchValue={searchValue} 
           setSearchValue={setSearchValue}/>
@@ -47,6 +66,15 @@ const App = () => {
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 
           favouriteComponent={AddFavourites}/>
+      </div>
+      <div className="row d-flex align-items-center mt-4 mb-4">
+        <ListHeading heading="Favourites" />
+      </div>
+      <div className="row movie-app">
+        <MoviesList 
+          movies={favourites} 
+          handleFavouritesClick={removeFavouriteMovie} 
+          favouriteComponent={RemoveFavourites}/>
       </div>
     </div>
   );
