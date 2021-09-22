@@ -66,12 +66,15 @@ const App = () => {
           setSearchValue={setSearchValue}/>
       </div>
 
+      {/* Movies List */}
       <div className="row movie-app">
         <MoviesList 
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 
           favouriteComponent={AddFavourites}/>
       </div>
+
+      {/* Favourites List */}
       <div className="row d-flex align-items-center mt-4 mb-4">
         <ListHeading heading="Favourites" />
       </div>
