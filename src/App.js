@@ -76,7 +76,7 @@ const App = () => {
           setSearchValue={setSearchValue}/> */}
       </div>
 
-      {/* Favourites List */}
+      {/* Movies List */}
       <div className="col movie-app">
         <MoviesList 
           movies={movies} 
