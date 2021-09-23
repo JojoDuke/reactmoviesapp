@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body{
-  background: #141414;
+  background: #564aaf;
   color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+nav{
+  background: #564aaf;
+}
+
+.searcher{
+  background: #413883;
+  font-weight: 500;
+}
+
+.searcher2{
+  font-weight: 500;
 }
 
 .movie-app > row{

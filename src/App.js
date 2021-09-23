@@ -6,6 +6,7 @@ import ListHeading from './components/ListHeading';
 import { SearchBox } from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
+import Navbar from './components/Navbar';
 
 const App = () => {
   //Set state
@@ -15,7 +16,7 @@ const App = () => {
 
   // Request movies from API
   const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}s&apikey=ce990560`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=ce990560`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -57,7 +58,12 @@ const App = () => {
   // FUNCTIONS CLOSE
 
   return (
-    <div className="container-fluid">
+    <div>
+      {/* Navigation Bar */}
+      <div>
+        <Navbar />
+      </div>
+
       <div className="row d-flex align-items-center mt-4 mb-4">
         <ListHeading heading="Movies" />
 
@@ -66,7 +72,7 @@ const App = () => {
           setSearchValue={setSearchValue}/>
       </div>
 
-      {/* Movies List */}
+      {/* Favourites List */}
       <div className="row movie-app">
         <MoviesList 
           movies={movies} 
