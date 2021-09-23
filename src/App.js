@@ -6,6 +6,7 @@ import ListHeading from './components/ListHeading';
 import { SearchBox } from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
+import MainMovie from './components/MainMovie';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -67,13 +68,16 @@ const App = () => {
       <div className="row d-flex align-items-center mt-4 mb-4">
         <ListHeading heading="Movies" />
 
-        <SearchBox 
+        {/* Main Movie Area */}
+        <MainMovie />
+
+        {/* <SearchBox 
           searchValue={searchValue} 
-          setSearchValue={setSearchValue}/>
+          setSearchValue={setSearchValue}/> */}
       </div>
 
       {/* Favourites List */}
-      <div className="row movie-app">
+      <div className="col movie-app">
         <MoviesList 
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 

@@ -11,6 +11,10 @@ nav{
   background: #564aaf;
 }
 
+input:focus{
+  outline: green !important;
+}
+
 .searcher{
   background: #413883;
   font-weight: 500;
