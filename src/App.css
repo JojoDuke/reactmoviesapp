@@ -11,8 +11,22 @@ nav{
   background: #564aaf;
 }
 
-input:focus{
-  outline: green !important;
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
 }
 
 .searcher{
@@ -89,7 +103,6 @@ input:focus{
   background-color: #87868f;
   color: #ffffff;
   margin-left: 20px;
-  box-shadow: 3px 5px 20px 0px #00000041;
 }
 .add-favourite:hover{
   background-color: #b5b4b9;
