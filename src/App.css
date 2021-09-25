@@ -109,3 +109,27 @@ label:focus,
   color: #ffffff;
 }
 
+.movie-div{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.movie-item{
+  border-radius: 20px;
+  image-rendering: crisp-edges;
+  width: 500px;
+  height: 300px;
+  background-color: red;
+}
+
+.movie-item img{
+  object-fit: fit;
+}
+
+.movie-app{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: red;
+}
