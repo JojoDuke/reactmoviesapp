@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react';
 
 const MoviesList = (props) => {
@@ -6,8 +7,9 @@ const MoviesList = (props) => {
 	return (
 		<>
 			{props.movies.map((movie, index) => (
-				<div className=''>
-					<img src={movie.Poster} alt='movie'></img>
+				<div className="movie-div">
+					<div className="overlay"></div>
+					<img className="movie-item shadow" src={movie.Poster} alt='movie'></img>
 				</div>
 			))}
 		</>

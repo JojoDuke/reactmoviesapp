@@ -44,32 +44,6 @@ label:focus,
   flex-wrap: nowrap;
 }
 
-.image-container{
-  position: relative;
-  transition: transform 0.2s;
-}
-
-.image-container:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.image-container:hover .overlay{
-  opacity: 1;
-}
-
-.overlay{
-  position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  transition: 0.5s ease;
-  opacity: 0;
-  bottom: 0;
-  padding: 20px;
-  text-align: center;
-  font-size: 20px;
-}
-
 .bg-image{
   height: 100%;
   width: 100%;
@@ -120,16 +94,17 @@ label:focus,
   image-rendering: crisp-edges;
   width: 500px;
   height: 300px;
-  background-color: red;
+  object-fit: cover;;
 }
 
-.movie-item img{
-  object-fit: fit;
+.overlay{
+  position: absolute;
+  background-color: rgba(9, 255, 0, 0.432);
+  border-radius: 20px;
+  width: 500px;
+  height: 300px;
 }
-
-.movie-app{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: red;
+.overlay:hover{
+  cursor: pointer;
+  transition: 0.2s;
 }
