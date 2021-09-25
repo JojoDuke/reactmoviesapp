@@ -81,10 +81,9 @@ const App = () => {
       </div>
 
       {/* Movies List */}
-      <div>
-        <ListHeading heading="Trending" />
-        <MoviesList
-          className="movie-app col" 
+      <ListHeading heading="Trending" />
+      <div className="d-flex">
+        <MoviesList 
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 
           favouriteComponent={AddFavourites}/>
