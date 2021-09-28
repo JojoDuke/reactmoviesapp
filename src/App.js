@@ -12,24 +12,35 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const App = () => {
-  //Set state
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [favourites, setFavourites] = useState([]);
 
-  // Request movies from API
-  const getMovie = async () => {
-    const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=ce990560';
-    const res = await fetch(url);
-    const data = await res.json();
-    const responseJson = JSON.parse(data);
-    setMovies(responseJson);
+  // Backup
+  // const getMovie = async () => {
+  //   const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=ce990560';
+  //   const res = await fetch(url);
+  //   const data = await res.json();
+  //   const responseJson = JSON.parse(data);
+  //   setMovies(responseJson);
+  // }
+
+  const API_KEY = "91d62f4";
+  const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}`;
+
+  const getMovies = async () => {
+    try {
+      const response = await fetch(url);
+        const data = await response.json()
+        setMovies(data);
+    } catch (e) {
+        console.error(e.toString);
+    } 
   }
   
-
   // FUNCTIONS
   useEffect(() => {
-    getMovie();
+    getMovies();
   }, []);
 
   useEffect(() => {
@@ -69,7 +80,7 @@ const App = () => {
       <div className="row d-flex align-items-center mb-5">
 
         {/* Main Movie Area */}
-        <MainMovie movies={movies}/>
+        <MainMovie/>
 
         {/* <SearchBox 
           searchValue={searchValue} 
