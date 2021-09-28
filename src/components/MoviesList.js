@@ -1,4 +1,3 @@
-/* eslint-disable react/style-prop-object */
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 //import '@splidejs/splide/dist/css/themes/splide-default.min.css';
@@ -24,14 +23,14 @@ const MoviesList = (props) => {
         <Splide options={{
             rewind: false,
             autoWidth: true,
-            perPage: 3,
+            perPage: 6,
             perMove: 2,
 			pagination: false,
-			gap: '3em',
+			gap: '1em',
             focus: 'center',
             type: 'slide',
             easing: 'ease',
-			arrows: false
+			arrows: true
         }}>
             {movieSplide}
 		</Splide>
