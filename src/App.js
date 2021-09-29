@@ -32,7 +32,7 @@ const App = () => {
     try {
       const response = await fetch(url);
         const data = await response.json()
-        setMovies(data);
+        setMovies([data]);
     } catch (e) {
         console.error(e.toString);
     } 
