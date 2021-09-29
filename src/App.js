@@ -35,8 +35,14 @@ const App = () => {
   const getMovies = async () => {
     try {
       const response = await fetch(url);
-        const data = await response.json()
-        setMovies([data]);
+        const data = await response.json();
+        const arr = [data];
+
+        for(let i = 0; i < 10; i++){
+          arr.push(data);
+        }
+
+        setMovies(arr);
     } catch (e) {
         console.error(e.toString);
     } 
