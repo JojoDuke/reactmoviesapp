@@ -16,23 +16,20 @@ const App = () => {
   const [searchValue, setSearchValue] = useState("");
   const [favourites, setFavourites] = useState([]);
 
-  // Backup
-  // const getMovie = async () => {
-  //   const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=ce990560';
-  //   const res = await fetch(url);
-  //   const data = await res.json();
-  //   const responseJson = JSON.parse(data);
-  //   setMovies(responseJson);
-  // }
+  const API_KEY = "91d62f4"; // OMdb API Key
 
-  const API_KEY = "91d62f4";
-  const length = 7;
-  const randomNumbers = [];
-  for(let i = 0; i < length; i++) {
-    randomNumbers.push(Math.random());
+  // Padding Function
+  function pad(number, length) {
+    var str = '' + number;
+    while(str.length < length) {
+      str = '0' + str;
+    }
+    return str;
   }
-
-  const movieID = "tt" + randomNumbers;
+  
+  // Get random movie ID
+  const randomID = pad(Math.floor((Math.random() * 2155529) + 1), 7);
+  const movieID = "tt" + randomID;
   const url = `http://www.omdbapi.com/?i=${movieID}&apikey=${API_KEY}`;
 
   const getMovies = async () => {
@@ -97,7 +94,8 @@ const App = () => {
       {/* Movies List */}
       <ListHeading heading="Trending" />
       <div>
-        <MoviesList 
+        <MoviesList
+          key={movies.imdbID} 
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 
           favouriteComponent={AddFavourites}/>
