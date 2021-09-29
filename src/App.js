@@ -26,7 +26,14 @@ const App = () => {
   // }
 
   const API_KEY = "91d62f4";
-  const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}`;
+  const length = 7;
+  const randomNumbers = [];
+  for(let i = 0; i < length; i++) {
+    randomNumbers.push(Math.random());
+  }
+
+  const movieID = "tt" + randomNumbers;
+  const url = `http://www.omdbapi.com/?i=${movieID}&apikey=${API_KEY}`;
 
   const getMovies = async () => {
     try {
