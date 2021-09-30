@@ -53,6 +53,10 @@ label:focus,
   image-rendering: crisp-edges;
 }
 
+.navv{
+  width: 200px;
+}
+
 .bg-hero{
     background-color: #f7f7f7;
     color: black;
