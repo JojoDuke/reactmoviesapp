@@ -12,7 +12,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [favourites, setFavourites] = useState([]);
 
@@ -30,28 +30,25 @@ const App = () => {
   // Get random movie ID
   const randomID = pad(Math.floor((Math.random() * 2155529) + 1), 7);
   const movieID = "tt" + randomID;
-  const url = `http://www.omdbapi.com/?i=${movieID}&y=2018&apikey=${API_KEY}`;
+  const url = `http://www.omdbapi.com/?i=${movieID}&y=2020&apikey=${API_KEY}`;
 
-  const getMovies = async () => {
-    try {
-      const response = await fetch(url);
-        const data = await response.json();
-        const arr = [data];
+  // const getMovies = async () => {
+  //   try {
+  //     const response = await fetch(url);
+  //       const data = await response.json();
+  //       const arr = [data];
 
-        for(let i = 0; i < 10; i++){
-          arr.push(data);
-        }
+  //       for(let i = 0; i < 10; i++){
+  //         arr.push(data);
+  //       }
 
-        setMovies(arr);
-    } catch (e) {
-        console.error(e.toString);
-    } 
-  }
+  //       setMovies(arr);
+  //   } catch (e) {
+  //       console.error(e.toString);
+  //   } 
+  // }
   
   // FUNCTIONS
-  useEffect(() => {
-    getMovies();
-  }, []);
 
   useEffect(() => {
 		const movieFavourites = JSON.parse(
@@ -100,8 +97,7 @@ const App = () => {
       {/* Movies List */}
       <ListHeading heading="Trending" />
       <div>
-        <MoviesList
-          key={movies.imdbID} 
+        <MoviesList 
           movies={movies} 
           handleFavouritesClick={addFavouriteMovie} 
           favouriteComponent={AddFavourites}/>
