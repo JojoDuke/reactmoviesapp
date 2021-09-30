@@ -30,7 +30,7 @@ const App = () => {
   // Get random movie ID
   const randomID = pad(Math.floor((Math.random() * 2155529) + 1), 7);
   const movieID = "tt" + randomID;
-  const url = `http://www.omdbapi.com/?i=${movieID}&apikey=${API_KEY}`;
+  const url = `http://www.omdbapi.com/?i=${movieID}&y=2018&apikey=${API_KEY}`;
 
   const getMovies = async () => {
     try {
