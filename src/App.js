@@ -10,6 +10,7 @@ import AddFavourites from './components/AddFavourites';
 import MainMovie from './components/MainMovie';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MovieModal from './components/MovieModal';
 
 const App = () => {
   const [movies] = useState(
@@ -93,6 +94,7 @@ const App = () => {
         <MainMovie/>
       </div>
 
+      <MovieModal />
       {/* Movies List */}
       <ListHeading heading="Trending" />
       <div>
