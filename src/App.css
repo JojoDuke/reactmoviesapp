@@ -112,6 +112,7 @@ label:focus,
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .movie-modal button{
@@ -120,7 +121,7 @@ label:focus,
   margin-top: 20px;
   border: none;
   font-weight: 600;
-  font-size: large;
+  font-size: 16px;
 }
 .btn-fav{
   background-color: rgb(112, 63, 202);
