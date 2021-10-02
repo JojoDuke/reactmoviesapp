@@ -66,6 +66,7 @@ label:focus,
     margin: 0% auto;
     display: flex;
     font-weight: 500;
+    align-items: flex-end;
 }
 
 .watch-now{
@@ -100,6 +101,29 @@ label:focus,
   width: 450px;
   height: 250px;
   object-fit: cover;;
+}
+
+.movie-modal{
+  border-radius: 20px;
+  background-color: rgb(38, 38, 63);
+  width: 40%;
+  height: 600px;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-modal button{
+  border-radius: 5px;
+  padding: 20px 200px;
+  margin-top: 20px;
+  border: none;
+  font-weight: 600;
+  font-size: large;
+}
+.btn-fav{
+  background-color: rgb(112, 63, 202);
 }
 
 .overlay{
