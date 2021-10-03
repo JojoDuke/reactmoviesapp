@@ -94,7 +94,7 @@ const App = () => {
         <MainMovie/>
       </div>
 
-      <MovieModal movies={movies}/>
+      <MovieModal />
       {/* Movies List */}
       <ListHeading heading="Trending" />
       <div>
