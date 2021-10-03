@@ -5,6 +5,7 @@ import YoutubeEmbed from './YoutubeEmbed';
 
 export const MovieModal = ({movies}) => {
     const ytKey = "AIzaSyBLggQmzLzEcuzZ4cJDFc-fCB-5T_PDAlE";
+    const videoTitle = "";
 
     return (
         <>
