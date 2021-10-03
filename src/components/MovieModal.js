@@ -1,13 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import YoutubeEmbed from './YoutubeEmbed';
 
 export const MovieModal = ({movies}) => {
     return (
         <>
             {movies.map((movie, index) => (
                 <div className="movie-modal shadow-lg">
-                    <div>Video</div>
+                    <YoutubeEmbed embedId="rokGy0huYEA"/>
                     <div>{movie.Plot}</div>
                     <div className="d-flex flex-column justify-content-end">
                         <button className="btn btn-primary">Watch Now</button>
