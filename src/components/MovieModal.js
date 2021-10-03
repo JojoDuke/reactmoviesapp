@@ -4,6 +4,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import YoutubeEmbed from './YoutubeEmbed';
 
 export const MovieModal = ({movies}) => {
+    const ytKey = "AIzaSyBLggQmzLzEcuzZ4cJDFc-fCB-5T_PDAlE";
+
     return (
         <>
             {movies.map((movie, index) => (
