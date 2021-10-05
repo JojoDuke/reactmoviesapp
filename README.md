@@ -1,5 +1,4 @@
 # Cinetime Movie App
-![Movies](https://pasteboard.co/e2ttVFwQVs2t.jpg)
 ## Overview
 A react app that uses the [OMdb API](http://www.omdbapi.com/) to display the info and data on movies. Its a pretty simple/basic project that took about 2 weeks, the frontend was made with Bootstrap btw :)  
 Check it out here: https://inspiring-feynman-b6ca9b.netlify.app/  
