@@ -7,6 +7,6 @@ Check it out here: https://inspiring-feynman-b6ca9b.netlify.app/
 * React
 * Bootstrap
 * Axios
-* Splide.js
+* SplideJs
 * OMdb API
 * Netlify
